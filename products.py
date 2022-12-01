@@ -15,12 +15,18 @@ def create_table_product():
     conn.commit()
 
     
-def insert_product(name: str, description: str, price: int, photo: str, color: str):
+def insert_product(name: str, 
+                   description: str, 
+                   price: int, 
+                   photo: str, 
+                   color: str, 
+                   brand:str, 
+                   call_back:str):
     query = f"""
         INSERT INTO products (
             name, description, price, photo, color
         )VALUES (
-            '{name}', '{description}', {price}, '{photo}', '{color}'
+            '{name}', '{description}', {price}, '{photo}', '{color}', '{brand}','{call_back}'
         );"""
     cursor.execute(query=query)
     conn.commit()
